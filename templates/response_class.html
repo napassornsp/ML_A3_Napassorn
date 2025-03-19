@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Price Classification Results</title>
+  <style>
+      /* Body & Background */
+      body {
+          font-family: Arial, sans-serif;
+          background-image: url('/static/road.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          position: relative;
+      }
+      /* Dark overlay to dim background image */
+      .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 0;
+      }
+      /* Main container */
+      .container {
+          position: relative;
+          z-index: 1; /* Ensure container is above overlay */
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.85);
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          max-width: 400px;
+          margin: 0 20px;
+      }
+      h1 {
+          color: #333;
+          margin-bottom: 20px;
+      }
+      p {
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 10px;
+      }
+      .prediction {
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 20px;
+      }
+      /* Styled probability list */
+      .prob-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto 20px auto;
+          display: inline-block;
+          text-align: left;
+      }
+      .prob-list li {
+          margin: 5px 0;
+          background-color: #f9f9f9;
+          padding: 8px 12px;
+          border-radius: 4px;
+          color: #333;
+      }
+      .prob-list li .prob-cat {
+          font-weight: bold;
+          margin-right: 5px;
+      }
+      /* Button */
+      button {
+          background-color: #333;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          font-size: 16px;
+          width: 100%;
+      }
+      button:hover {
+          background-color: #222;
+      }
+  </style>
+</head>
+<body>
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Content container -->
+  <div class="container">
+      <h1>Car Price Classification Results</h1>
+      <p class="prediction">
+        <strong>Predicted Price Category:</strong> {{ predicted_category }}
+      </p>
+      <p class="prediction">
+        <strong>Price Range:</strong> ${{ min_price }} - ${{ max_price }}
+      </p>
+      
+      <!-- <p class="prediction"><strong>Probabilities:</strong></p> -->
+      <!-- <ul class="prob-list">
+          {% for prob in probabilities[0] %}
+          <li>
+              <span class="prob-cat">Category {{ loop.index0 }}:</span>
+              <span class="prob-value">{{ '{:.2f}'.format(prob * 100) }}%</span>
+          </li>
+          {% endfor %}
+      </ul> -->
+
+      <!-- Button to navigate back to the main page -->
+      <button onclick="location.href='/'">Back to Main page</button>
+  </div>
+</body>
+</html>

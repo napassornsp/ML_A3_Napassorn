@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MLA2: Precision Car Price Estimation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .navbar a {
+            margin: 0 1rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar a:hover {
+            color: #f9f9f9;
+            background-color: #555;
+            border-radius: 3px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, p {
+            margin: 1.2rem 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to MLA3: Precision Car Price Estimation</h1>
+        <h2>Instantly Discover Your Car's Market Value</h2>
+        <p>
+            Get accurate and reliable car price estimations by inputting key information about your vehicle. Our advanced predictive models ensure precise valuations whether you have all data at hand or need to use our system-provided default values.
+        </p>
+        <h3>How to Estimate:</h3>
+        <ul>
+            <li><strong>Choose Your Model:</strong> the Old Regression Model for classic estimations or the New Regression Model for advanced predictions.</li>
+            <li><strong>Enter Your Car’s Details:</strong> Provide details such as Manufacturing Year, Kilometers Driven, Mileage, Engine Capacity, and Maximum Power.</li>
+            <li><strong>Receive Your Estimation:</strong> Click to get your detailed car valuation.</li>
+        </ul>
+        <p>
+            Start now and find out what your car is worth in just a few clicks!
+        </p>
+        <!-- Navigation bar added here below the content -->
+        <div class="navbar">
+            <a href="{{ url_for('a1') }}">Old Regression Model</a>
+            <a href="{{ url_for('a2') }}">New Regression Model</a>
+            <a href="{{ url_for('a3') }}">Classification Model</a>
+        </div>
+    </div>
+</body>
+</html>

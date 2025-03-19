@@ -1,0 +1,9 @@
+# Ignore the ENV directory
+ENV/
+.vscode/
+__pycache__/
+# Optional: Add other files/directories to exclude
+# Example:
+# .git
+# __pycache__
+# *.log

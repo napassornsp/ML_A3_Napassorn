@@ -1,0 +1,14 @@
+numpy
+scikit-learn
+pandas
+
+Flask
+requests
+beautifulsoup4
+
+seaborn
+matplotlib
+mlflow
+shap
+
+pytest

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Car Price Classifier Model</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/static/car.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      margin: 10px;
+      max-height: 95vh;
+      overflow-y: auto;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+    }
+    p {
+      margin-bottom: 15px;
+      line-height: 1.4;
+      color: #555;
+      text-align: left;
+      font-size: 0.9em;
+    }
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.95em;
+    }
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9em;
+      width: 100%;
+    }
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 0.95em;
+      width: 100%;
+    }
+    ul {
+      padding-left: 15px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    li {
+      margin-bottom: 8px;
+      font-size: 0.9em;
+      line-height: 1.3;
+    }
+    /* Toggle switch styles */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-top: 5px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector('form');
+      form.onsubmit = function (event) {
+        const inputs = document.querySelectorAll('input[type="text"]');
+        let valid = true;
+        inputs.forEach(input => {
+          if (input.value && isNaN(input.value)) {
+            valid = false;
+          }
+        });
+        if (!valid) {
+          event.preventDefault();
+          alert("Please fill every textbox with numeric values only.");
+        }
+      };
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Advanced Car Price Classifier</h1>
+    <p>
+      Welcome to our state-of-the-art classifier. Our model assigns your car into distinct price categories (such as Low, Medium, High, or Premium) to help you understand its market position.
+    </p>
+    <ul>
+      <li><strong>Xavier Initialization</strong>: Properly calibrates initial settings for reliable predictions.</li>
+      <li><strong>Classification Approach</strong>: Efficiently assigns your car to a price category using either a Normal or Ridge model.</li>
+    </ul>
+    <p>
+      Instructions: Enter the necessary numerical data below. Input fields include Manufacturing Year, Kilometers Driven, Mileage, Engine Capacity, and Maximum Power. Default values will be used if any data is missing.
+    </p>
+    <form action="/receive_data_v3" method="post">
+      <div class="input-group">
+        <label for="year">Year:</label>
+        <input type="text" id="textbox1" name="year" placeholder="Enter Manufacturing Year">
+      </div>
+      <div class="input-group">
+        <label for="km_driven">Kilometers Driven:</label>
+        <input type="text" id="textbox2" name="km_driven" placeholder="Enter Kilometers Driven">
+      </div>
+      <div class="input-group">
+        <label for="mileage">Mileage:</label>
+        <input type="text" id="textbox3" name="mileage" placeholder="Enter Mileage (kmpl)">
+      </div>
+      <div class="input-group">
+        <label for="engine">Engine Capacity:</label>
+        <input type="text" id="textbox4" name="engine" placeholder="Enter Engine Capacity (cc)">
+      </div>
+      <div class="input-group">
+        <label for="max_power">Max Power:</label>
+        <input type="text" id="textbox5" name="max_power" placeholder="Enter Max Power (bhp)">
+      </div>
+      <div class="input-group">
+        <label for="model_switch">Using Loss Function of Ridge Logistic Regression:</label>
+        <label class="switch">
+          <input type="checkbox" id="model_switch" name="model_switch" value="ridge">
+          <span class="slider"></span>
+        </label>
+        <p style="font-size: 0.8em; color: #555; margin-top: 5px;">
+          Toggle on for Ridge model; leave off for Normal model.
+        </p>
+      </div>
+      <input type="submit" value="Classify Price">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  amy_service:
+    container_name: amy_assignment3  # <-- Change Container name in Docker
+    build: .
+    image: amy_assignment3:latest # <-- Change image name in Docker
+    ports:
+      - "600:600"
+    working_dir: /app
+    restart: always
+
+
