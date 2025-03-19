@@ -29,8 +29,8 @@ This project classifies cars into price categories using Logistic Regression wit
 ## 🛠️ Implementation
 
 ### Task 3: Deployment
-- **MLflow Tracking**: `https://mlflow.cs.ait.ac.th/`
-- **Model Registry**: Registered as `<student_ID>-a3-model`
+- **MLflow Tracking**: `[https://mlflow.cs.ait.ac.th/](https://mlflow.ml.brain.cs.ait.ac.th/)`
+- **Model Registry**: Registered as `st124949-a3-model`
 - **CI/CD Pipeline**:
   - Unit tests for input validation
   - Auto-deploy on successful tests
