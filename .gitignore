@@ -11,3 +11,13 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore temporary or unwanted files
+command.txt
+test4.py
