@@ -1,9 +1,23 @@
-# Ignore the ENV directory
+# Ignore virtual environment
 ENV/
-.vscode/
+.vscode
+.pytest_cache
+# Byte-compiled / optimized / DLL files
 __pycache__/
-# Optional: Add other files/directories to exclude
-# Example:
-# .git
-# __pycache__
-# *.log
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore temporary or unwanted files
+command.txt
+test4.py
