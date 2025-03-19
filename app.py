@@ -137,21 +137,21 @@ os.environ["MLFLOW_TRACKING_PASSWORD"] = "password"
 
 app = Flask(__name__)
 
-# def load_scaler():
-#     artifact_uri = "mlflow-artifacts:/482631146878478494/f684b1534ec6474e8b8aebc7ae16dacb/artifacts/preprocessor/scaler.pkl"
-#     scaler_path = mlflow.artifacts.download_artifacts(artifact_uri=artifact_uri)
-#     scaler = joblib.load(scaler_path)
-#     return scaler
-
 def load_scaler():
-    # Load the scaler from a local file
-    scaler_path = './model/scaler_a3.pkl'
-    try:
-        scaler = joblib.load(scaler_path)
-    except Exception as e:
-        print(f"Failed to load local scaler: {e}")
-        scaler = None
+    artifact_uri = "mlflow-artifacts:/482631146878478494/f684b1534ec6474e8b8aebc7ae16dacb/artifacts/preprocessor/scaler.pkl"
+    scaler_path = mlflow.artifacts.download_artifacts(artifact_uri=artifact_uri)
+    scaler = joblib.load(scaler_path)
     return scaler
+
+# def load_scaler():
+#     # Load the scaler from a local file
+#     scaler_path = './model/scaler_a3.pkl'
+#     try:
+#         scaler = joblib.load(scaler_path)
+#     except Exception as e:
+#         print(f"Failed to load local scaler: {e}")
+#         scaler = None
+#     return scaler
 
 
 
