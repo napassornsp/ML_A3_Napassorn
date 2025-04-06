@@ -1,23 +1,23 @@
-# 🚗 Car Price Classification - Logistic Regression with Ridge Regularization
+# Car Price Classification - Logistic Regression with Ridge Regularization
 
 ![Application Interface](Images/home.png)
 
-## 🌟 Overview
+## Overview
 This project classifies cars into price categories using Logistic Regression with Ridge regularization. It includes custom metric implementations, MLflow experiment tracking, and CI/CD automation.
 
 **🔗 Live Demo:** [Car Price Classifier](https://st124949.ml.brain.cs.ait.ac.th/)
 
 ---
 
-## 🚀 Immediate Access
+## Immediate Access
 [![Try Now](https://img.shields.io/badge/TRY%20THE%20MODEL-NOW-brightgreen?style=for-the-badge&logo=azure-pipelines)](https://st124949.ml.brain.cs.ait.ac.th/)
 
 **Direct Model Access:**  
-👉 [https://st124949.ml.brain.cs.ait.ac.th/](https://st124949.ml.brain.cs.ait.ac.th/) 👈
+ [https://st124949.ml.brain.cs.ait.ac.th/](https://st124949.ml.brain.cs.ait.ac.th/) 👈
 
 ---
 
-## 🚀 Features
+##  Features
 - 4-class price categorization (0-3)
 - Ridge/L2 regularization toggle
 - Custom precision/recall/F1 implementations
@@ -26,7 +26,7 @@ This project classifies cars into price categories using Logistic Regression wit
 
 ---
 
-## 🛠️ Implementation
+##  Implementation
 
 ### Task 3: Deployment
 - **MLflow Tracking**: [https://mlflow.cs.ait.ac.th/](https://mlflow.ml.brain.cs.ait.ac.th/)
@@ -38,7 +38,7 @@ This project classifies cars into price categories using Logistic Regression wit
 
 ---
 
-## 💻 Usage
+## Usage
 
 1. **Access the Live Model**  
    [https://st124949.ml.brain.cs.ait.ac.th/](https://st124949.ml.brain.cs.ait.ac.th/)
@@ -59,13 +59,13 @@ This project classifies cars into price categories using Logistic Regression wit
 
 ---
 
-## 📊 MLflow Tracking
+## MLflow Tracking
 ![Experiment UI](Images/mlflow_server.png)  
 Track model runs and compare metrics on MLflow server.
 
 ---
 
-## 📈 Model Validation
+## Model Validation
 | Custom Implementation | sklearn Report |
 |-----------------------|----------------|
 | ![Manual Metrics](Images/manual_classification_report.png) | ![sklearn Metrics](Images/sk_classification_report.png) |
